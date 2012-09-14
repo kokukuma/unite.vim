@@ -235,7 +235,7 @@ function! s:source.async_gather_candidates(args, context) "{{{
     let a:context.is_async = 0
   endif
 
-  if match(g:unite_source_grep_default_opts, 'l') < 0
+  if match(g:unite_source_grep_default_opts, '-l') < 0
     let candidates = map(filter(
           \ map(stdout.read_lines(-1, 100),
           \ "iconv(v:val, 'char', &encoding)"),
